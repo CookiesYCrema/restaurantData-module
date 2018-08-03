@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "setup": "webpack -w",
-    "start": "nodemon ./server/index.js"
+    "start": "nodemon ./Server/index.js"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,7 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
     "express": "^4.16.3",
     "helmet": "^3.12.1",
     "mongoose": "^5.2.4",

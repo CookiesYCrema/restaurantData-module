@@ -26,13 +26,13 @@ class Hours extends React.Component {
         {
             return (
                 <div>
-                    <table id="hoursTable"> <tbody>
+                  <table id="hoursTable"><tbody>
                         {this.state.days.map((day, index) => {
                             return (
                                 <tr key={index}><Td><b>{day}</b></Td><Td>{this.state.hours[index].start} - {this.state.hours[index].end}</Td></tr>
                             )
                         })}
-                    </tbody> </table>
+                    </tbody></table>
                 </div>
             )
         } else {

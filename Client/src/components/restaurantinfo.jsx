@@ -51,11 +51,12 @@ class RestaurantInfo extends React.Component {
         }
         this.getDate = this.getDate.bind(this);
         this.showHours = this.showHours.bind(this);
+        this.populateData = this.populateData.bind(this);
     }
 
     populateData(){
         axios
-        .post('api/restaurantList')
+        .post('http://localhost:3005/api/restaurantList')
         .catch(err => {console.log('nononono Post'); console.error(err);})
     }
 
@@ -129,7 +130,7 @@ class RestaurantInfo extends React.Component {
 
     componentWillMount(){
         axios
-            .get('api/restaurantList', {params: {restaurant: 'Gary Danko'}})
+            .get('http://localhost:3005/api/restaurantList', {params: {restaurant: 'Gary Danko'}})
             .then(result => {
                 this.setState({
                     restaurant: result.data[0],
@@ -140,7 +141,7 @@ class RestaurantInfo extends React.Component {
             .catch(err => {
                 this.populateData().then(() => {
                     axios
-                    .get('api/restaurantList', {params: {restaurant: 'Gary Danko'}})
+                    .get('http://localhost:3005/api/restaurantList', {params: {restaurant: 'Gary Danko'}})
                     .then(result => {
                         this.setState({
                             restaurant: result.data[0],
@@ -158,7 +159,6 @@ class RestaurantInfo extends React.Component {
             <Div>
                 {/* UNCOMMENT THE BUTTON BELOW TO POPULATE DATA */}
                 {/* <button onClick={this.populateData}> Populate Data </button> */}
-
                 <InfoBox 
                     date={this.state.date} 
                     restaurant={this.state.restaurant} 

@@ -3,11 +3,11 @@ import RestaurantInfo from './restaurantinfo';
 
 const App = (props) => (
     <div>
+      <div>
         <div>
-            <div>
-                <RestaurantInfo />
-            </div>
+          <RestaurantInfo />
         </div>
+      </div>
     </div>
 )
 
