@@ -4,9 +4,9 @@ Setting up the moreinfo module:
     b. run mongo in terminal   
         I. switch to yelp Database
 2. Run server in terminal
-    a. npm run start
+    a. npm start
 3. Run webpack in terminal
-    a. npm run setup
+    a. npm run buile
 
 *notes:
 1. Server runs on port 3005

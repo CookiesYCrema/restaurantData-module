@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack -w",
-    "start": "nodemon ./Server/index.js"
+    "start": "nodemon ./Server/index.js",
+    "setup": "node  ./Database/seed/seedData.js"
   },
   "keywords": [],
   "author": "",
@@ -19,12 +20,16 @@
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
     "express": "^4.16.3",
+    "faker": "^4.1.0",
     "helmet": "^3.12.1",
     "mongoose": "^5.2.4",
     "mongoose-type-url": "^1.0.4",
+    "nodemon": "^1.18.3",
     "path": "^0.12.7",
+    "pg": "^7.4.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "sequelize": "^4.38.0",
     "styled-components": "^3.3.3",
     "webpack": "^4.16.1",
     "webpack-cli": "^3.1.0",

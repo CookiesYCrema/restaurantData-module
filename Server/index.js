@@ -17,4 +17,4 @@ server.use(express.static(path.join(__dirname, '../client/dist')));
 
 server.use('/api', router);
 
-server.listen(port, () => console.log('server is connected'));
+server.listen(port, () => console.log(`connected to  ${port}`));
