@@ -21,3 +21,9 @@ fs.writeFile('restaurantData.csv', 'name, menu, is_closed, url, price, health_sc
   };
   recurseSeeding();
 });
+
+/* to import from the created csv file into postgres -  from Mario - 
+> \copy places(name, reviews, rating, price, "mainCategory", "subCategories", city, image) FROM 'C:/Users/mario/Documents/HR/HRLA23/SystemDesignCapstone/also-viewed-restaurants/data.csv' CSV HEADER;
+
+
+\copy restaurantdata(name, menu, is_closed, url, price, health_score) FROM 'restaurantData.csv' CSV HEADER; */

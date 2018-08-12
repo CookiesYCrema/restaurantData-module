@@ -1,7 +1,7 @@
-const postgres = require('postgresql');
+const postgres = require('pg');
 const Sequelize = require('sequelize');
 
-const connection = new Sequelize('restaurantData', 'nnm', 'martin', {
+const connection = new Sequelize('restaurantdata', 'neilmartin', 'martin', {
   host: 'localhost',
   dialect: 'postgres',
   operatorsAliases:false
@@ -12,3 +12,4 @@ connection.authenticate()
   .catch(err => console.error('unable to connect', err));
 
 module.exports = connection;
+

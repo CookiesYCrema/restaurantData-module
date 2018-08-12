@@ -1,31 +1,7 @@
 const connection = require('./index');
 const Sequelize = require('sequelize');
-/*
-const restaurantSchema = mongoose.Schema({
-    //to be determined by data from server
-    alias: String,
-    name: String,
-    price_range: String,
-    menu: mongoose.SchemaTypes.Url,
-    is_closed: Boolean,
-    url: mongoose.SchemaTypes.Url,
-    price: String,
-    health_score: String,
-    more_info: [
-        {property: String, value: String},
-      ],
-    hours: {
-        hours_type: String,
-        open: [{
-            is_overnight: Boolean,
-            end: Number,
-            day: Number,
-            start: Number
-          }],
-        is_open_now: Boolean
-      },
-  });
 
+/*
 const restaurantDataModel = connection.define('restaurantData', {
     'alias': {type: Sequelize.STRING},
     'name': {type: Sequelize.STRING},
@@ -56,3 +32,17 @@ const RestaurantData = connection.define('restaurantdata', {
 });
 
 module.exports = { RestaurantData }
+
+// CREATE TABLE restaurantdata(id PRIMARY KEY, name VARCHAR(50), menu VARCHAR(50), is_closed VARCHAR(50), url VARCHAR(50), price VARCHAR(50), health_score SMALLINT);
+
+/* CREATE TABLE restaurantdata
+(
+  id serial NOT NULL,
+  name character varying(50),
+  menu character varying(50),
+  is_closed character varying(255),
+  url character varying(50),
+  price character varying(50),
+  health_score integer,
+  CONSTRAINT restaurantdata_pkey PRIMARY KEY (id)
+) */
