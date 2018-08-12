@@ -27,3 +27,5 @@ fs.writeFile('restaurantData.csv', 'name, menu, is_closed, url, price, health_sc
 
 
 \copy restaurantdata(name, menu, is_closed, url, price, health_score) FROM 'restaurantData.csv' CSV HEADER; */
+// benchmark in psql with \timing --> timing = 'on'
+// sample query select * from restaurantdata where is_closed = "false";

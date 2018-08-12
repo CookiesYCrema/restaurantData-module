@@ -12,4 +12,3 @@ connection.authenticate()
   .catch(err => console.error('unable to connect', err));
 
 module.exports = connection;
-
