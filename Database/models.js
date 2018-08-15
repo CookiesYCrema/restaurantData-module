@@ -35,14 +35,35 @@ module.exports = { RestaurantData }
 
 // CREATE TABLE restaurantdata(id PRIMARY KEY, name VARCHAR(50), menu VARCHAR(50), is_closed VARCHAR(50), url VARCHAR(50), price VARCHAR(50), health_score SMALLINT);
 
-/* CREATE TABLE restaurantdata
+/* 
+postgres command to create table:
+CREATE TABLE restaurantdata
 (
   id serial NOT NULL,
   name character varying(50),
   menu character varying(50),
   is_closed character varying(255),
   url character varying(50),
-  price character varying(50),
+  price integer,
   health_score integer,
   CONSTRAINT restaurantdata_pkey PRIMARY KEY (id)
-) */
+);
+
+cassandra command to create table:
+CREATE TABLE restaurantdata(
+    name text,
+    menu text,
+    is_closed boolean,
+    url text,
+    price smallint,
+    health_score int,
+    PRIMARY KEY (name)
+);
+
+
+
+*/
+
+
+
+// optimization: add multicolumn indexes, index formatting, partial index.
