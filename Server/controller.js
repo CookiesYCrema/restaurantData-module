@@ -6,7 +6,8 @@ const controller = {
     //Raw query attempt:
     /*
     RestaurantData.query(
-      `SELECT * FROM restaurantdata WHERE id = ${req.params.id}`
+      `SELECT * FROM
+       restaurantdata WHERE id = ${req.params.id}`
       ,{ type: sequelize.QueryTypes.SELECT})
     .then(data => {
       res.status(200).send(data)

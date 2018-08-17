@@ -4,6 +4,7 @@ import InfoBox from './infobox';
 import Hours from './hours';
 import MoreInfo from './moreinfo';
 import Styled from 'styled-components';
+import { throws } from 'assert';
 
 const Div = Styled.div`
     font-family: Arial, Helvetica, sans-serif;
@@ -18,7 +19,13 @@ class RestaurantInfo extends React.Component {
             date: 0,
             isOpen: '',
             hours: [
-                {start: '900', end: '1700'},{start: '900', end: '1700'},{start: '900', end: '1700'},{start: '900', end: '1700'},{start: '900', end: '1700'},{start: '900', end: '1700'},{start: '900', end: '1700'},
+                {start: '9:00 am', end: '8:00 pm'},
+                {start: '9:00 am', end: '8:00 pm'},
+                {start: '9:00 am', end: '8:00 pm'},
+                {start: '9:00 am', end: '8:00 pm'},
+                {start: '9:00 am', end: '8:00 pm'},
+                {start: '9:00 am', end: '11:00 pm'},
+                {start: '11:00 am', end: '5:30 pm'},
             ],
             //have to make default states for all the data
             restaurant: {
@@ -130,10 +137,21 @@ class RestaurantInfo extends React.Component {
 
     componentWillMount(){
         axios
-            .get('http://localhost:3005/api/restaurantList', {params: {restaurant: 'Gary Danko'}})
+            .get('http://localhost:3005/api/restaurantList', {params: {restaurant: 'Awesome Sauce'}})
             .then(result => {
+                console.log(result.data)
+                result.data['more_info'] = [
+                  {"property":"delivery", "value": "No"},
+                  {"property":"take_out", "value": "Yes"},
+                  {"property":"credit_cards", "value": "Yes"},
+                  {"property":"parking", "value": "Valet, Garage, Street, Private Lot"},
+                  {"property":"bike_parking", "value": "Yes"},
+                  {"property":"good_for_kids", "value": "Yes"},
+                  {"property":"good_for_groups", "value": "Yes"},
+                  {"property":"wi_fi", "value": "Free"}
+                ]
                 this.setState({
-                    restaurant: result.data[0],
+                    restaurant: result.data,
                 });
                 this.getDate();
                 this.showHours();
@@ -169,6 +187,7 @@ class RestaurantInfo extends React.Component {
                 <br />
                 <div>
                     <Hours 
+                        name = {this.state.restaurant.name}
                         hours={this.state.hours}
                     />
                     <br />

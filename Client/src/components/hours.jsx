@@ -52,9 +52,10 @@ class Hours extends React.Component {
     
 
     render () {
+        console.log(this.props.name)
         return (
             <div>
-                <h3>Hours</h3>
+                <h3>{this.props.name} Hours</h3>
                 {this.renderAllHours()}
                 <a href=""><img src="https://www.shareicon.net/download/2017/01/17/872771_edit_512x512.png" width="24" height="24"/>Edit business info</a>
             </div>
