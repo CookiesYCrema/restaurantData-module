@@ -1,10 +1,13 @@
 const postgres = require('pg');
 const Sequelize = require('sequelize');
 
-const connection = new Sequelize('restaurantdata', 'neilmartin', 'martin', {
+const connection = new Sequelize('hrla23sdc', 'neilmartin', 'martin', {
   host: 'localhost',
   dialect: 'postgres',
-  operatorsAliases:false
+  operatorsAliases:false,
+  define: {
+    timestamps:false
+  }
 });
 
 connection.authenticate()
