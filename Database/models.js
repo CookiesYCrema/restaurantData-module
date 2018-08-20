@@ -8,7 +8,8 @@ const RestaurantData = connection.define('restaurantdata', {
     url: {type: Sequelize.STRING},
     price: {type: Sequelize.INTEGER},
     health_score: {type: Sequelize.INTEGER},
-});
+})
+// .sync({force: false});
 
 module.exports = { RestaurantData };
 
@@ -27,6 +28,9 @@ CREATE TABLE restaurantdata
   health_score integer,
   CONSTRAINT restaurantdata_pkey PRIMARY KEY (id)
 );
+// copy into postgres from CSV:
+COPY restaurantdata(name, menu, is_closed, url, price, health_score)
+FROM '/Users/neilmartin/Documents/Coding/hrla23/SDC/restaurantData-module/data1.csv' CSV HEADER;
 
 cassandra command to create table:
 CREATE TABLE restaurantdata(
@@ -38,7 +42,7 @@ CREATE TABLE restaurantdata(
     health_score int,
     PRIMARY KEY (name)
 );
-// copy into existing table from CSV file:
+// copy into existing cassandra table from CSV file:
 copy restaurantdata(name, menu, is_closed, url, price, health_score) from '/Users/neilmartin/Documents/Coding/hrla23/SDC/restaurantData-module/data1.csv' with HEADER = TRUE;
 
 */
