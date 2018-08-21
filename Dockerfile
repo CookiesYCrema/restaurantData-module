@@ -1,8 +1,5 @@
-# FROM node:8
 FROM node:carbon
 
-# COPY . /restaurantData-module
-# WORKDIR /restaurantData-module
 WORKDIR /
 COPY package*.json ./
 
@@ -12,5 +9,18 @@ COPY . .
 
 EXPOSE 3005
 
-# CMD ["npm", "run", "build"]
 CMD ["npm","run","start"]
+
+##############################
+
+# FROM node:8
+
+# COPY . /restaurantData-module
+# WORKDIR /restaurantData-module
+
+# RUN npm install
+
+# EXPOSE 3005
+
+# CMD ["npm", "run", "build"]
+# CMD ["npm","run","start"]
