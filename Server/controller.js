@@ -25,6 +25,7 @@ const controller = {
     }).catch(err => console.error(err));
   },
   post: (req, res) => {
+    console.log(req.body)
     var { name, menu, is_closed, url, price, health_score } = req.body
     RestaurantData.create({
       name,
@@ -32,8 +33,13 @@ const controller = {
       is_closed, 
       url, 
       price, 
-      health_score
-    });
+      health_score,
+    }).then(data => {
+      res.status(202).json({
+        message:'successfully post newRestaurant',
+        added:data
+      })
+    }).catch(err => console.error(err));
   },
   update: (req, res) => {
     RestaurantData.update({
