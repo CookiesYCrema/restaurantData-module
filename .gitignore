@@ -2,4 +2,5 @@ node_modules
 restaurantData.csv
 data1.csv
 Client/dist/bundle.js
-restaurantData-module/newrelic.js
+newrelic.js
+*.log
