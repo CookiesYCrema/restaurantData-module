@@ -15,10 +15,10 @@ const controller = {
     .catch(err => console.error(err)); 
     */
     // General attempt:
-    console.log(req.query)
+    console.log(req.params.name)
     RestaurantData.findOne({
       where:{
-        name: req.query.restaurant
+        name: req.params.name
       }
     }).then(data => {
       res.status(200).send(data)

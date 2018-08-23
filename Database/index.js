@@ -6,6 +6,7 @@ const connection = new Sequelize('hrla23sdc', 'neilmartin', 'martin', {
   host: 'localhost',
   // host: 'db',
   dialect: 'postgres',
+  logging: false,
   operatorsAliases:false,
   define: {
     timestamps:false

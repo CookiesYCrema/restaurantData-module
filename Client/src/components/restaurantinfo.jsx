@@ -137,7 +137,7 @@ class RestaurantInfo extends React.Component {
 
     componentWillMount(){
         axios
-            .get('http://localhost:3005/api/restaurantList', {params: {restaurant: 'Awesome Sauce'}})
+            .get('http://localhost:3005/api/restaurantList/Alfredo')
             .then(result => {
                 console.log(result.data)
                 result.data['more_info'] = [
