@@ -7,6 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "start": "node ./Server/index.js",
+    "start1": "node ./Server/index1.js",
+    "start2": "node ./Server/index2.js",
+    "start3": "node ./Server/index3.js",
+    "start4": "node ./Server/index4.js",
     "setup": "node  ./Database/seed/seedData.js"
   },
   "keywords": [],

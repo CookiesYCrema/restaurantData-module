@@ -15,7 +15,7 @@ const controller = {
     .catch(err => console.error(err)); 
     */
     // General attempt:
-    console.log(req.params.name)
+    // console.log(req.params.name)
     RestaurantData.findOne({
       where:{
         name: req.params.name
@@ -25,7 +25,7 @@ const controller = {
     }).catch(err => console.error(err));
   },
   post: (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
     var { name, menu, is_closed, url, price, health_score } = req.body
     RestaurantData.create({
       name,
