@@ -20,9 +20,9 @@ postgres command to create table:
 CREATE TABLE restaurantdata
 (
   id serial NOT NULL,
-  name character varying(50),
+  name character varying(100),
   menu character varying(50), 
-  is_closed character varying(255),
+  is_closed character varying(50),
   url character varying(50),
   price integer,
   health_score integer,
