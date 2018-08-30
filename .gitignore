@@ -4,3 +4,8 @@ data1.csv
 Client/dist/bundle.js
 newrelic.js
 *.log
+loaderio-21fb6e99be91b0237cc0c9fbacaddf3c.txt
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

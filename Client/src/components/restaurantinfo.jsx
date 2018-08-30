@@ -137,9 +137,10 @@ class RestaurantInfo extends React.Component {
 
     componentWillMount(){
         axios
-            .get('http://localhost:3005/api/restaurantList/Alfredo')
+            // .get('http://localhost:3005/api/restaurantList/Alfredo')
             // put in correct aws instance in get url--
             // .get('http://ec2-54-241-142-239.us-west-1.compute.amazonaws.com:9000/api/restaurantList/Awesome%20Sauce')
+            .get('/api/restaurantList/Awesome%20Sauce')
             .then(result => {
                 console.log(result.data)
                 result.data['more_info'] = [

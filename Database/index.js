@@ -2,11 +2,14 @@ const postgres = require('pg');
 const Sequelize = require('sequelize');
 
 // const connection = new Sequelize('hrla23sdc', 'postgres', 'example', { // < the docker version
-const connection = new Sequelize('hrla23sdc', 'neilmartin', 'martin', {
-  host: 'localhost',
+// const connection = new Sequelize('hrla23sdc', 'neilmartin', 'martin', {
+const connection = new Sequelize('hrla23sdc', 'nnmartin', '12345678', {
+  // host: 'localhost',
   // host: 'db',
+  host: 'sdc2.cyfs5sihw2c1.us-west-1.rds.amazonaws.com',
+  port: 5411,
   dialect: 'postgres',
-  logging: false,
+  logging: true,
   operatorsAliases:false,
   define: {
     timestamps:false
